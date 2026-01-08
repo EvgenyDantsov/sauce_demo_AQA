@@ -1,1 +1,1 @@
-# Ozon-ui-automation
+# Sauce demo UI automation

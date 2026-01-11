@@ -35,7 +35,7 @@ public class WebDriverUtil {
                 break;
             case "yandex":
                 // Устанавливаем путь к исполняемому файлу Яндекс.Браузера
-                System.setProperty("webdriver.chrome.driver", "G:/projects/yandexDriver/yandexdriver.exe");
+                System.setProperty("webdriver.chrome.driver", config.getProperty("yandex.driver"));
                 driver = new ChromeDriver();
                 break;
         }

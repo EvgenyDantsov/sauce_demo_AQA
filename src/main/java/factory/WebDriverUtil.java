@@ -3,10 +3,13 @@ package factory;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Properties;
 
 public class WebDriverUtil {
@@ -26,8 +29,11 @@ public class WebDriverUtil {
         // Используем конструкцию switch для выбора нужного браузера в котором тестируем
         switch (browser.toLowerCase()) {
             case "chrome":
+                ChromeOptions options = new ChromeOptions();
+                // 🔹 Запуск в инкогнито
+                options.addArguments("--incognito");
                 System.setProperty("webdriver.chrome.driver", config.getProperty("chrome.driver"));
-                driver = new ChromeDriver();
+                driver = new ChromeDriver(options);
                 break;
             case "firefox":
                 WebDriverManager.firefoxdriver().setup();

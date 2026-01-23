@@ -1,4 +1,5 @@
 import factory.WebDriverUtil;
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -31,6 +32,7 @@ public class LogoutUserTest extends BaseTest {
         loginPage.login("standard_user", "secret_sauce");
     }
     @Test
+    @DisplayName("User can log out successfully and return to login page")
     public void logoutUserTest(){
         headerMenu.clickMenuButton();
         headerMenu.clickLogout();

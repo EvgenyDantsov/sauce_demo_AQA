@@ -41,6 +41,7 @@ public class LoginPageParameterizedTest extends BaseTest {
         loginPage = new LoginPage(driver);
     }
     @Test
+    @DisplayName("Login page: validate login with valid and invalid credentials")
     public void swagLabsLoginTest() {
         loginPage.login(username, password);
         if (isLoginSuccessful) {

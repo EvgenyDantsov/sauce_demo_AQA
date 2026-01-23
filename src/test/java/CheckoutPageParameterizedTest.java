@@ -1,4 +1,5 @@
 import factory.WebDriverUtil;
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -56,6 +57,7 @@ public class CheckoutPageParameterizedTest extends BaseTest {
     }
 
     @Test
+    @DisplayName("Checkout: validate user information form and navigation to Overview page")
     public void checkoutTest() {
         String productsName = "Sauce Labs Backpack";
         productsPage.clickProductActionButton(productsName);

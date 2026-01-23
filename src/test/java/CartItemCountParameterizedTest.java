@@ -1,4 +1,5 @@
 import factory.WebDriverUtil;
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -46,6 +47,7 @@ public class CartItemCountParameterizedTest extends BaseTest {
     }
 
     @Test
+    @DisplayName("Cart item counter updates correctly when adding multiple products")
     public void cartItemCountTest() {
         for (String product : productsToAdd) {
             productsPage.clickProductActionButton(product);

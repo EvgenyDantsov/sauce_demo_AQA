@@ -28,6 +28,7 @@ public class CartPageTest extends BaseTest {
         loginPage.login("standard_user", "secret_sauce");
     }
     @Test
+    @DisplayName("User can open cart page after login")
     public void openCartPageAfterLoginTest() {
         productsPage.clickShoppingCartButton();
         assertEquals("Your Cart", cartPage.getCartTitle());

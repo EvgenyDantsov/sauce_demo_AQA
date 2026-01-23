@@ -14,7 +14,7 @@ import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProductsPage {
+public class ProductsPage{
     private static final String PRODUCT_NAME_XPATH = "//div[@data-test='inventory-item-name' and text()='%s']";
     private static final String PRODUCT_CONTAINER_XPATH = "//div[@class='inventory_item'][.//div[text()='%s']]";
     private static final String PRODUCT_DESCRIPTION_XPATH = PRODUCT_CONTAINER_XPATH + "//div[@data-test='inventory-item-desc']";
@@ -148,7 +148,7 @@ public class ProductsPage {
         return !driver.findElements(footer).isEmpty();
     }
     public List<Double> getAllProductPrices() {
-        List<WebElement> priceElements = driver.findElements(By.className("inventory_item_price"));
+        List<WebElement> priceElements = driver.findElements(productPriceInside);
 
         List<Double> prices = new ArrayList<>();
         for (WebElement price : priceElements) {

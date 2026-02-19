@@ -26,7 +26,8 @@ public class HeaderMenu {
 
     @Step("Click 'Reset App State' in menu")
     public void clickResetAppState() {
-        driver.findElement(resetAppStateMenu).click();
+        WebElement resetBtn = new WebDriverWait(driver, Duration.ofSeconds(5)).until(ExpectedConditions.elementToBeClickable(resetAppStateMenu));
+        resetBtn.click();
     }
 
     @Step("Click 'Logout' in menu")
